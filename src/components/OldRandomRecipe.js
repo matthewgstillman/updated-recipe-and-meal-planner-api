@@ -10,9 +10,14 @@ const RandomRecipe = () => {
   const [randomRecipeDataMeta, setRandomRecipeDataMeta] = useState([{}]);
   const [randomRecipe, setRandomRecipe] = useState([{}]);
   const [cuisineType, setCuisineType] = useState("");
+  const [mealType, setMealType] = useState("");
 
   const handleCuisineChange = (event) => {
     setCuisineType(event.target.value);
+  };
+
+  const handleMealTypeChange = (event) => {
+    setMealType(event.target.value);
   };
 
   const dietFormatDictionary = {
@@ -73,7 +78,7 @@ const RandomRecipe = () => {
   };
   const getRandomRecipe = () => {
     fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=62c09a4a046944019321583648539eae&number=3&tags=${cuisineType}`
+      `https://api.spoonacular.com/recipes/random?apiKey=62c09a4a046944019321583648539eae&number=3&tags=${cuisineType}${mealType}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -86,11 +91,14 @@ const RandomRecipe = () => {
       });
   };
 
+  //   console.log(`Random Recipe: ${JSON.stringify(randomRecipe)}`);
+  console.log(`Cuisine Type: ${cuisineType} Meal Type: ${mealType}`);
+
   return (
     <div>
       <NavBarComponent />
       <h1 className="randomRecipeHeader">Random Recipe Data</h1>
-      <h3>Select Cuisine Type (Optional)</h3>
+      <h3>Select Cuisine and Meal Type (Optional)</h3>
       <select type="text" onChange={handleCuisineChange}>
         <option value="" disabled selected>
           Select cuisine type
@@ -100,6 +108,7 @@ const RandomRecipe = () => {
         <option value="indian">Indian</option>
         <option value="irish">Irish</option>
         <option value="italian">Italian</option>
+        <option value="japanese">Japanese</option>
         <option value="korean">Korean</option>
         <option value="mediterranean">Mediterranean</option>
         <option value="mexican">Mexican</option>
@@ -107,6 +116,28 @@ const RandomRecipe = () => {
         <option value="spanish">Spanish</option>
         <option value="thai">Thai</option>
         <option value="vietnamese">Vietnamese</option>
+      </select>
+      <br></br>
+      <select type="text" onChange={handleMealTypeChange}>
+        <option value="" disabled selected>
+          Select meal type
+        </option>
+        <option value="">None</option>
+        <option value="main-course">Main Course</option>
+        <option value=",dessert">Dessert</option>
+        {cuisineType === "Japanese" ? (
+          <></>
+        ) : (
+          <option value=",appitizer">Appitizer</option>
+        )}
+        {cuisineType === "korean" || "vietnamese" ? (
+          <></>
+        ) : (
+          <option value=",breakfast">Breakfast</option>
+        )}
+        <option value=",soup">Soup</option>
+        <option value=",sauce">Sauce</option>
+        <option value=",snack">Snack</option>
       </select>
       <br></br>
       <button className="randomRecipeButton" onClick={getRandomRecipe}>
