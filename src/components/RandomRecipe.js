@@ -73,17 +73,29 @@ const RandomRecipe = () => {
   };
   const getRandomRecipe = () => {
     fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=62c09a4a046944019321583648539eae&number=3&tags=${cuisineType}`
+      `https://api.spoonacular.com/recipes/random?apiKey=62c09a4a046944019321583648539eae&number=1&tags=${cuisineType}`
     )
       .then((response) => response.json())
       .then((data) => {
         setRandomRecipeDataMeta(data["recipes"]);
+        // setRandomRecipe([
+        //   {
+        //     0: data["recipes"][0]["extendedIngredients"],
+        //     1: data["recipes"][1]["extendedIngredients"],
+        //     2: data["recipes"][2]["extendedIngredients"],
+        //   },
+        // ]);
         setRandomRecipe(data["recipes"][0]["extendedIngredients"]);
         console.log(data);
       })
       .catch(() => {
         console.log("error");
       });
+    console.log(
+      `Random Recipe Data Meta Ingredients: ${JSON.stringify(
+        randomRecipeDataMeta[0]["extendedIngredients"]
+      )}`
+    );
   };
 
   return (
@@ -102,7 +114,6 @@ const RandomRecipe = () => {
         <option value="italian">Italian</option>
         <option value="korean">Korean</option>
         <option value="mediterranean">Mediterranean</option>
-        <option value="mexican">Mexican</option>
         <option value="southern">Southern</option>
         <option value="spanish">Spanish</option>
         <option value="thai">Thai</option>
@@ -118,7 +129,7 @@ const RandomRecipe = () => {
           <div>
             <hr />
             <br />
-            <a href={randomMeta.sourceUrl}>
+            <a className="recipeLink" href={randomMeta.sourceUrl}>
               <h1 className="recipeTitleLink">{randomMeta.title}</h1>
             </a>
             <br />
@@ -151,7 +162,7 @@ const RandomRecipe = () => {
             )}
           </div>
         ))}
-      <h1>Ingredients</h1>
+      <h1 className="ingredientsHeading">Ingredients</h1>
       {randomRecipe &&
         randomRecipe.map((recipe) => (
           <div>

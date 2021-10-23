@@ -5,7 +5,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: white;
+  background-color: #2f241d;
 }
 
 .App {
@@ -32,7 +32,7 @@ input {
 
 button {
   padding: 0.5rem 1rem;
-  background-color: orangered;
+  background-color: tan;
   color: white;
   border: none;
   font-family: "Roboto", sans-serif;
@@ -69,6 +69,10 @@ ul {
   display: flex;
 }
 
+.mealArticle:hover {
+  border: 2px solid gray;
+}
+
 img {
   width: 100%;
   margin-bottom: 1rem;
@@ -90,10 +94,7 @@ article {
 
 a {
   text-decoration: none;
-  /* background-color: orangered; */
-  /* color: white; */
   width: fit-content;
-  /* padding: 0.5rem 1rem; */
   align-content: center;
 }
 
@@ -160,4 +161,12 @@ a:hover {
 
 .homeHeaderImage {
   margin-top: 56px;
+}
+
+.recipeLink :hover {
+  color: aquamarine;
+}
+
+.ingredientsHeading {
+  margin-top: 20px;
 }
