@@ -73,18 +73,11 @@ const RandomRecipe = () => {
   };
   const getRandomRecipe = () => {
     fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=62c09a4a046944019321583648539eae&number=1&tags=${cuisineType}`
+      `https://api.spoonacular.com/recipes/random?apiKey=62c09a4a046944019321583648539eae&number=5&tags=${cuisineType}`
     )
       .then((response) => response.json())
       .then((data) => {
         setRandomRecipeDataMeta(data["recipes"]);
-        // setRandomRecipe([
-        //   {
-        //     0: data["recipes"][0]["extendedIngredients"],
-        //     1: data["recipes"][1]["extendedIngredients"],
-        //     2: data["recipes"][2]["extendedIngredients"],
-        //   },
-        // ]);
         setRandomRecipe(data["recipes"][0]["extendedIngredients"]);
         console.log(data);
       })
@@ -160,15 +153,15 @@ const RandomRecipe = () => {
             ) : (
               <></>
             )}
-          </div>
-        ))}
-      <h1 className="ingredientsHeading">Ingredients</h1>
-      {randomRecipe &&
-        randomRecipe.map((recipe) => (
-          <div>
-            <h6>
-              {recipe["amount"]} {recipe["unit"]} {recipe["originalName"]}
-            </h6>
+            <h1 className="ingredientsHeading">Ingredients</h1>
+            {randomRecipe &&
+              randomRecipe.map((recipe) => (
+                <div>
+                  <h6>
+                    {recipe["amount"]} {recipe["unit"]} {recipe["originalName"]}
+                  </h6>
+                </div>
+              ))}
           </div>
         ))}
     </div>
