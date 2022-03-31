@@ -2,8 +2,6 @@ import React from "react";
 import Meal from "./Meal";
 
 const MealList = ({ mealData }) => {
-  const nutrients = mealData.nutrients;
-  console.log(`Meal List Meal Data: ${mealData}`);
   return (
     <main>
       <section className="meals">

@@ -1,9 +1,7 @@
 import "../App.css";
 import React, { useState } from "react";
 import MealList from "./MealList";
-import RandomRecipe from "./RandomRecipe";
 import NavbarComponent from "./NavBarComponent";
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const MealPlanner = () => {
   const [mealData, setMealData] = useState(null);
@@ -17,7 +15,6 @@ const MealPlanner = () => {
 
   const handleDietChange = (event) => {
     setDietType(event.target.value);
-    console.log(`Diet type: ${dietType}`);
   };
 
   const dietFormatDictionary = {
@@ -35,7 +32,6 @@ const MealPlanner = () => {
   };
 
   const getMealData = () => {
-    console.log(`Calories: ${calories}, Diet: ${dietType}`);
     setMealPlanSubmitted(true);
     fetch(
       `https://api.spoonacular.com/mealplanner/generate?apiKey=62c09a4a046944019321583648539eae&timeFrame=day&targetCalories=${calories}&diet=${dietType}`
@@ -43,10 +39,9 @@ const MealPlanner = () => {
       .then((response) => response.json())
       .then((data) => {
         setMealData(data);
-        console.log(data);
       })
       .catch(() => {
-        console.log("error");
+        console.error("error");
       });
   };
 

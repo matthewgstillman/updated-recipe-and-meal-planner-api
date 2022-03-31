@@ -1,101 +1,32 @@
 import React, { useState } from "react";
-import Meal from "./Meal";
 import NavBarComponent from "./NavBarComponent";
-// import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 
 const RandomRecipe = () => {
-  console.log(`API Key: ${process.env.REACT_APP_API_KEY}`);
-  const URL = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=3&tags=`;
-  console.log(`URL is: ${URL}`);
   const [randomRecipeDataMeta, setRandomRecipeDataMeta] = useState([{}]);
-  const [randomRecipe, setRandomRecipe] = useState([{}]);
   const [cuisineType, setCuisineType] = useState("");
+  const URL = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=3&tags=${cuisineType}`;
 
   const handleCuisineChange = (event) => {
     setCuisineType(event.target.value);
   };
 
-  const dietFormatDictionary = {
-    none: "None",
-    "gluten-free": "Gluten Free",
-    keto: "Keto",
-    vegetarian: "Vegetarian",
-    "lacto-vegetarian": "Lacto Vegetarian",
-    "ovo-vegetarian": "Ovo Vegetarian",
-    paleo: "Paleo",
-    primal: "Primal",
-    pescetarian: "Pescetarian",
-    vegan: "Vegan",
-    whole30: "Whole 30",
-  };
-
-  const cuisineFormatDictionary = {
-    none: "None",
-    african: "African",
-    american: "American",
-    british: "British",
-    cajun: "Cajun",
-    carribbean: "Carribean",
-    chinese: "Chinese",
-    european: "European",
-    french: "French",
-    german: "German",
-    greek: "Greek",
-    indian: "Indian",
-    irish: "Irish",
-    italian: "Italian",
-    japanese: "Japanese",
-    jewish: "Jewish",
-    korean: "Korean",
-    mediterranean: "Mediterranean",
-    mexican: "Mexican",
-    nordic: "Nordic",
-    southern: "Southern",
-    spanish: "Spanish",
-    thai: "Thai",
-    vietnamese: "Vietnamese",
-  };
-
-  const mealTypeFormatDictionary = {
-    ",mainCourse": "Main Course",
-    ",sideDish": "Side Dish",
-    ",dessert": "dessert",
-    ",appitizer": "Appitizer",
-    ",salad": "Salad",
-    ",bread": "Bread",
-    ",breakfast": "Breakfast",
-    ",soup": "Soup",
-    ",beverage": "Beverage",
-    ",sauce": "Sauce",
-    ",marinade": "Marinade",
-    ",fingerfood": "Fingerfood",
-    ",snack": "Snack",
-  };
   const getRandomRecipe = () => {
-    fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=62c09a4a046944019321583648539eae&number=5&tags=${cuisineType}`
-    )
+    fetch(URL)
       .then((response) => response.json())
       .then((data) => {
         setRandomRecipeDataMeta(data["recipes"]);
-        setRandomRecipe(data["recipes"][0]["extendedIngredients"]);
-        console.log(data);
       })
       .catch(() => {
         console.log("error");
       });
-    console.log(
-      `Random Recipe Data Meta Ingredients: ${JSON.stringify(
-        randomRecipeDataMeta[0]["extendedIngredients"]
-      )}`
-    );
+    console.log(randomRecipeDataMeta);
   };
 
   return (
     <div>
       <NavBarComponent />
       <h1 className="randomRecipeHeader">Random Recipe Data</h1>
-      <h3>Select Cuisine Type (Optional)</h3>
+      <h3>Select Cuisine and Meal Type (Optional)</h3>
       <select type="text" onChange={handleCuisineChange}>
         <option value="" disabled selected>
           Select cuisine type
@@ -105,6 +36,7 @@ const RandomRecipe = () => {
         <option value="indian">Indian</option>
         <option value="irish">Irish</option>
         <option value="italian">Italian</option>
+        <option value="jewish">Jewish</option>
         <option value="korean">Korean</option>
         <option value="mediterranean">Mediterranean</option>
         <option value="southern">Southern</option>
@@ -122,7 +54,7 @@ const RandomRecipe = () => {
           <div>
             <hr />
             <br />
-            <a className="recipeLink" href={randomMeta.sourceUrl}>
+            <a href={randomMeta.sourceUrl}>
               <h1 className="recipeTitleLink">{randomMeta.title}</h1>
             </a>
             <br />
@@ -153,17 +85,19 @@ const RandomRecipe = () => {
             ) : (
               <></>
             )}
-            <h1 className="ingredientsHeading">Ingredients</h1>
-            {randomRecipe &&
-              randomRecipe.map((recipe) => (
-                <div>
-                  <h6>
-                    {recipe["amount"]} {recipe["unit"]} {recipe["originalName"]}
-                  </h6>
-                </div>
-              ))}
+            <br />
+            {randomMeta.extendedIngredients ? <h1>Ingredients</h1> : <></>}
+            <ul>
+              {randomMeta.extendedIngredients &&
+                randomMeta.extendedIngredients.map((ingredient) => {
+                  return <li>{ingredient.original}</li>;
+                })}
+            </ul>
+            <br></br>
           </div>
         ))}
+      <br />
+      <br />
     </div>
   );
 };

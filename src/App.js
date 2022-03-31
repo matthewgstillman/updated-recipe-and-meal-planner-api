@@ -1,9 +1,8 @@
 import "./App.css";
-import React, { useState } from "react";
-import MealList from "./components/MealList";
+import React from "react";
 import RandomRecipe from "./components/RandomRecipe";
 import MealPlanner from "./components/MealPlanner";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HomeComponent from "./components/HomeComponent";
 
