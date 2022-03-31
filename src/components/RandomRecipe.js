@@ -19,7 +19,6 @@ const RandomRecipe = () => {
       .catch(() => {
         console.log("error");
       });
-    console.log(randomRecipeDataMeta);
   };
 
   return (
@@ -87,12 +86,10 @@ const RandomRecipe = () => {
             )}
             <br />
             {randomMeta.extendedIngredients ? <h1>Ingredients</h1> : <></>}
-            <ul>
-              {randomMeta.extendedIngredients &&
-                randomMeta.extendedIngredients.map((ingredient) => {
-                  return <li>{ingredient.original}</li>;
-                })}
-            </ul>
+            {randomMeta.extendedIngredients &&
+              randomMeta.extendedIngredients.map((ingredient) => {
+                return <h6>{ingredient.original}</h6>;
+              })}
             <br></br>
           </div>
         ))}
