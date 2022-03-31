@@ -34,7 +34,7 @@ const MealPlanner = () => {
   const getMealData = () => {
     setMealPlanSubmitted(true);
     fetch(
-      `https://api.spoonacular.com/mealplanner/generate?apiKey=62c09a4a046944019321583648539eae&timeFrame=day&targetCalories=${calories}&diet=${dietType}`
+      `https://api.spoonacular.com/mealplanner/generate?apiKey=${process.env.REACT_APP_API_KEY}&timeFrame=day&targetCalories=${calories}&diet=${dietType}`
     )
       .then((response) => response.json())
       .then((data) => {
