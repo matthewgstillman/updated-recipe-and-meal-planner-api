@@ -3,9 +3,6 @@ import NavBarComponent from "./NavBarComponent";
 import { Image } from "react-bootstrap";
 
 const HomeComponent = () => {
-  // console.log(
-  //   `Process.env Test Variable is: ${process.env.REACT_APP_TEST_VARIABLE}`
-  // );
   return (
     <div>
       <NavBarComponent />
