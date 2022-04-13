@@ -48,7 +48,7 @@ const MealPlanner = () => {
   return (
     <div>
       <NavbarComponent />
-      <section className="controls">
+      <section className="mealPlan">
         <h1 data-testid="mealPlanHeader" className="mealPlanHeader">
           Meal Plan
         </h1>
