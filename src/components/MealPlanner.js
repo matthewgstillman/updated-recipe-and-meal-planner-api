@@ -52,9 +52,10 @@ const MealPlanner = () => {
         <h1 data-testid="mealPlanHeader" className="mealPlanHeader">
           Meal Plan
         </h1>
-        <h3 data-testid="mealPlanParametersHeader">
+        <h2 data-testid="mealPlanParametersHeader">
           Create a Daily Meal Plan by Providing Your Calories and Diet Type
-        </h3>
+        </h2>
+        <br />
         <h3 data-testid="mealPlanCalorieParametersHeader">
           Desired Daily Calories (1500-4000)
         </h3>
