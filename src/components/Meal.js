@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Image } from "react-bootstrap";
 
 const Meal = ({ meal }) => {
   const [imageUrl, setImageUrl] = useState("");
@@ -18,14 +19,18 @@ const Meal = ({ meal }) => {
 
   return (
     <article className="mealArticle">
-      <h1>{meal.title}</h1>
-      <img src={imageUrl} alt="recipe" />
+      <h1 data-testid="mealTitle">{meal.title}</h1>
+      <Image data-testid="mealImage" src={imageUrl} alt="recipe" />
       <ul className="instructions">
-        <li>Preparation Time: {meal.readyInMinutes} minutes</li>
-        <li>Number of servings: {meal.servings}</li>
+        <li data-testid="prepTime">
+          Preparation Time: {meal.readyInMinutes} minutes
+        </li>
+        <li data-testid="servingsNumber">
+          Number of servings: {meal.servings}
+        </li>
       </ul>
       <button>
-        <a className="sourceUrl" href={meal.sourceUrl}>
+        <a data-testid="sourceUrl" className="sourceUrl" href={meal.sourceUrl}>
           Go to Recipe
         </a>
       </button>
