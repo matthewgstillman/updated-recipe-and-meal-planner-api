@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# React Recipe and Meals API Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This document will go over some of the components used in this React project that makes use of the Spoonacular API to get recipe data.
 
-## Available Scripts
+## Spoonacular API Key
 
-In the project directory, you can run:
+**It's important that you obtain an API key from [Spoonacular API](https://spoonacular.com/food-api) prior to using this project**
 
-### `npm start`
+For documentation about the **Spoonacular API**, click [here](https://spoonacular.com/food-api/docs). Pricing information about the API can be found [here](https://spoonacular.com/food-api/pricing) which included the free tier.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Once an API Key has been obtained, create a **.env.local** file in the root folder and create an environment variable called **REACT_APP_API_KEY**.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Main Routes and Components Used
 
-### `npm test`
+There are two main components you will deal with using this project: **Meal Planner** and **Random Recipe Generator**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Meal Planner**
 
-### `npm run build`
+To use the Meal Planner, click on the **Meal Planner** link on the top Navigation bar.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The **Meal Planner** has a parameter for desired daily calorie level from 1500-4000. There's also an optional parameter for diet type with the following options:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Gluten Free
+- Keto
+- Vegetarian
+- Ovo-Vegetarian
+- Paleo
+- Primal
+- Pescatarian
+- Vegan
+- Whole 30
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When your desired daily calorie level been selected (as well as the optional diet type), click on the **Get Daily Meal Plan** button to get a appropriate meal plan with 3 meals for the day.
 
-### `npm run eject`
+## Random Recipe Generator
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To use the Random Recipe Generator, click on the **Random Recipe Generator** link on the top Navigation bar.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The **Random Recipe Generator** has an optional parameter for cuisine type with the following options:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- German
+- Indian
+- Irish
+- Italian
+- Jewish
+- Korean
+- Mediterranean
+- Southern
+- Spanish
+- Thai
+- Vietnamese
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Whether or not the optional cuisine type parameter has been chosen, click on the **Get Random Recipes** button to get 3 random recipes.

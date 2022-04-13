@@ -56,7 +56,7 @@ const RandomRecipe = () => {
         </Form.Select>
         <br></br>
         <button className="randomRecipeButton" onClick={getRandomRecipe}>
-          Get Random Recipe
+          Get Random Recipes
         </button>
         <br />
         {randomRecipeDataMeta &&
