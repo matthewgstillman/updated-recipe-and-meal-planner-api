@@ -4,7 +4,7 @@ import Meal from "./Meal";
 const MealList = ({ mealData }) => {
   return (
     <main>
-      <section className="meals">
+      <section data-testid="mealList" className="meals">
         {mealData.meals.map((meal) => {
           return <Meal key={meal.id} meal={meal} />;
         })}

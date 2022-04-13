@@ -24,9 +24,17 @@ const RandomRecipe = () => {
   return (
     <div>
       <NavBarComponent />
-      <h1 className="randomRecipeHeader">Random Recipe</h1>
-      <h3>Select Cuisine and Meal Type (Optional)</h3>
-      <select type="text" onChange={handleCuisineChange}>
+      <h1 className="randomRecipeHeader" data-testid="randomRecipeHeader">
+        Random Recipe
+      </h1>
+      <h3 data-testid="randomRecipeCuisineTypeHeader">
+        Select Cuisine and Meal Type (Optional)
+      </h3>
+      <select
+        data-testid="randomRecipeSelectForm"
+        type="text"
+        onChange={handleCuisineChange}
+      >
         <option value="" disabled selected>
           Select cuisine type
         </option>

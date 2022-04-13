@@ -49,12 +49,20 @@ const MealPlanner = () => {
     <div>
       <NavbarComponent />
       <section className="controls">
-        <h1 className="mealPlanHeader">Meal Plan</h1>
-        <h3>
+        <h1 data-testid="mealPlanHeader" className="mealPlanHeader">
+          Meal Plan
+        </h1>
+        <h3 data-testid="mealPlanParametersHeader">
           Create a Daily Meal Plan by Providing Your Calories and Diet Type
         </h3>
-        <h3>Desired Daily Calories (1500-4000)</h3>
-        <select type="number" onChange={handleCalorieChange}>
+        <h3 data-testid="mealPlanCalorieParametersHeader">
+          Desired Daily Calories (1500-4000)
+        </h3>
+        <select
+          type="number"
+          data-testid="mealPlannerCaloriesSelect"
+          onChange={handleCalorieChange}
+        >
           <option value="1500">1500</option>
           <option value="1750">1750</option>
           <option value="2000">2000</option>
@@ -68,8 +76,15 @@ const MealPlanner = () => {
           <option value="4000">4000</option>
         </select>
         <br />
-        <h3>Add dietary restrictions (Optional)</h3>
-        <select type="text" placeholder="Diet Type" onChange={handleDietChange}>
+        <h3 data-testid="mealPlannerDietaryRestrictionsHeader">
+          Add dietary restrictions (Optional)
+        </h3>
+        <select
+          type="text"
+          data-testid="mealPlannerDietarySelect"
+          placeholder="Diet Type"
+          onChange={handleDietChange}
+        >
           <option value="">None</option>
           <option value="gluten-free">Gluten Free</option>
           <option value="keto">Keto</option>
@@ -83,7 +98,9 @@ const MealPlanner = () => {
           <option value="whole30">Whole 30</option>
         </select>
         <br />
-        <button onClick={getMealData}>Get Daily Meal Plan</button>
+        <button data-testid="mealPlannerSubmitButton" onClick={getMealData}>
+          Get Daily Meal Plan
+        </button>
         <br />
         <br />
         <h1>
