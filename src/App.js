@@ -11,13 +11,28 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/" component={HomeComponent} />
+          <Route
+            exact
+            path="/"
+            component={HomeComponent}
+            data-testid="homeComponentRoute"
+          />
         </Switch>
         <Switch>
-          <Route exact path="/mealplanner" component={MealPlanner} />
+          <Route
+            exact
+            path="/mealplanner"
+            component={MealPlanner}
+            data-testid="mealPlannerComponentRoute"
+          />
         </Switch>
         <Switch>
-          <Route exact path="/random" component={RandomRecipe} />
+          <Route
+            exact
+            path="/random"
+            component={RandomRecipe}
+            data-testid="randomRecipeComponentRoute"
+          />
         </Switch>
       </div>
     </Router>
