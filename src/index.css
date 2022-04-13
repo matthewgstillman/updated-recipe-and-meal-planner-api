@@ -132,7 +132,6 @@ a:hover {
 }
 
 .instructionsParagraph {
-  /* text-align: center; */
   width: 50%;
   margin: 0 auto;
 }
@@ -169,7 +168,3 @@ a:hover {
 .ingredientsHeading {
   margin-top: 20px;
 }
-
-/* .ingredientsParagraph {
-  margin-top: -10px;
-} */
