@@ -2,6 +2,7 @@ import "../App.css";
 import React, { useState } from "react";
 import MealList from "./MealList";
 import UpdatedNavbarComponent from "./UpdatedNavBarComponent";
+import { Container, Form } from "react-bootstrap";
 
 const MealPlanner = () => {
   const [mealData, setMealData] = useState(null);
@@ -59,10 +60,12 @@ const MealPlanner = () => {
         <h4 data-testid="mealPlanCalorieParametersHeader">
           Desired Daily Calories (1500-4000)
         </h4>
-        <select
-          type="number"
+        <Form.Select
+          aria-label="Select Cuisine"
           data-testid="mealPlannerCaloriesSelect"
+          type="text"
           onChange={handleCalorieChange}
+          className="formSelectInput"
         >
           <option value="1500">1500</option>
           <option value="1750">1750</option>
@@ -75,13 +78,13 @@ const MealPlanner = () => {
           <option value="3500">3500</option>
           <option value="3750">3750</option>
           <option value="4000">4000</option>
-        </select>
+        </Form.Select>
         <br />
         <br />
         <h4 data-testid="mealPlannerDietaryRestrictionsHeader">
           Add dietary restrictions (Optional)
         </h4>
-        <select
+        <Form.Select
           type="text"
           data-testid="mealPlannerDietarySelect"
           placeholder="Diet Type"
@@ -98,7 +101,7 @@ const MealPlanner = () => {
           <option value="pescatarian">Pescatarian</option>
           <option value="vegan">Vegan</option>
           <option value="whole30">Whole 30</option>
-        </select>
+        </Form.Select>
         <br />
         <br />
         <button data-testid="mealPlannerSubmitButton" onClick={getMealData}>

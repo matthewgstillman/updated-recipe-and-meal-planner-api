@@ -2,7 +2,7 @@ import React from "react";
 
 const UpdatedNavBarComponent = () => {
   return (
-    <div>
+    <div className="mainNavBar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="/">
           Recipe and Meal Planner API
