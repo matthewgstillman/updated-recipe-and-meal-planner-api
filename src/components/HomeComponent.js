@@ -1,11 +1,12 @@
 import React from "react";
 import NavBarComponent from "./NavBarComponent";
+import UpdatedNavBarComponent from "./UpdatedNavBarComponent";
 import { Image } from "react-bootstrap";
 
 const HomeComponent = () => {
   return (
-    <div>
-      <NavBarComponent />
+    <div className="homeDiv">
+      <UpdatedNavBarComponent />
       <Image
         data-testid="homeHeaderImage"
         className="homeHeaderImage"
@@ -13,7 +14,7 @@ const HomeComponent = () => {
         fluid
       />
       <h1 data-testid="homeComponentHeader">
-        Welcome to the Food API Project!
+        Welcome to the Recipe and Meal Planner API Project!
       </h1>
       <br />
       <h2>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavBarComponent from "./NavBarComponent";
+import UpdatedNavBarComponent from "./UpdatedNavBarComponent";
 import { Container, Form } from "react-bootstrap";
 
 const RandomRecipe = () => {
@@ -24,8 +24,8 @@ const RandomRecipe = () => {
 
   return (
     <div>
-      <NavBarComponent />
       <Container className="randomRecipeBox">
+        <UpdatedNavBarComponent />
         <h1 className="randomRecipeHeader" data-testid="randomRecipeHeader">
           Random Recipe
         </h1>

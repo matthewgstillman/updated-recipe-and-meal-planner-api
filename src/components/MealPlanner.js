@@ -1,7 +1,7 @@
 import "../App.css";
 import React, { useState } from "react";
 import MealList from "./MealList";
-import NavbarComponent from "./NavBarComponent";
+import UpdatedNavbarComponent from "./UpdatedNavBarComponent";
 
 const MealPlanner = () => {
   const [mealData, setMealData] = useState(null);
@@ -47,18 +47,18 @@ const MealPlanner = () => {
 
   return (
     <div>
-      <NavbarComponent />
       <section className="mealPlan">
+        <UpdatedNavbarComponent />
         <h1 data-testid="mealPlanHeader" className="mealPlanHeader">
           Meal Plan
         </h1>
-        <h2 data-testid="mealPlanParametersHeader">
+        <h3 data-testid="mealPlanParametersHeader">
           Create a Daily Meal Plan by Providing Your Calories and Diet Type
-        </h2>
-        <br />
-        <h3 data-testid="mealPlanCalorieParametersHeader">
-          Desired Daily Calories (1500-4000)
         </h3>
+        <br />
+        <h4 data-testid="mealPlanCalorieParametersHeader">
+          Desired Daily Calories (1500-4000)
+        </h4>
         <select
           type="number"
           data-testid="mealPlannerCaloriesSelect"
@@ -77,9 +77,10 @@ const MealPlanner = () => {
           <option value="4000">4000</option>
         </select>
         <br />
-        <h3 data-testid="mealPlannerDietaryRestrictionsHeader">
+        <br />
+        <h4 data-testid="mealPlannerDietaryRestrictionsHeader">
           Add dietary restrictions (Optional)
-        </h3>
+        </h4>
         <select
           type="text"
           data-testid="mealPlannerDietarySelect"
@@ -98,6 +99,7 @@ const MealPlanner = () => {
           <option value="vegan">Vegan</option>
           <option value="whole30">Whole 30</option>
         </select>
+        <br />
         <br />
         <button data-testid="mealPlannerSubmitButton" onClick={getMealData}>
           Get Daily Meal Plan
