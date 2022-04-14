@@ -3,7 +3,7 @@ import React from "react";
 const UpdatedNavBarComponent = () => {
   return (
     <div className="mainNavBar">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-primary">
         <a className="navbar-brand" href="/">
           Recipe and Meal Planner API
         </a>

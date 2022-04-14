@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 const NavBarComponent = () => {
   return (
     <div>
-      <Navbar data-testid="navBarMain" bg="dark" fixed="top" variant="dark">
+      <Navbar data-testid="navBarMain" bg="primary" fixed="top" variant="dark">
         <Container data-testid="navBarContainer">
           <Navbar.Brand href="/" data-testid="navBarHomeLink">
             Food Project
