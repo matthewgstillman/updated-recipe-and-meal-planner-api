@@ -1,7 +1,7 @@
 import "../App.css";
 import React, { useState } from "react";
 import MealList from "./MealList";
-import UpdatedNavbarComponent from "./UpdatedNavBarComponent";
+import NavbarComponent from "./NavBarComponent";
 import { Container, Form } from "react-bootstrap";
 
 const MealPlanner = () => {
@@ -49,7 +49,7 @@ const MealPlanner = () => {
   return (
     <div>
       <section className="mealPlan">
-        <UpdatedNavbarComponent />
+        <NavbarComponent />
         <h1 data-testid="mealPlanHeader" className="mealPlanHeader">
           Meal Plan
         </h1>

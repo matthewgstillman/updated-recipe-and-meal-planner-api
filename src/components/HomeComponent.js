@@ -1,12 +1,11 @@
 import React from "react";
 import NavBarComponent from "./NavBarComponent";
-import UpdatedNavBarComponent from "./UpdatedNavBarComponent";
 import { Image } from "react-bootstrap";
 
 const HomeComponent = () => {
   return (
     <div>
-      <UpdatedNavBarComponent />
+      <NavBarComponent />
       <div className="homeDiv">
         <Image
           data-testid="homeHeaderImage"
