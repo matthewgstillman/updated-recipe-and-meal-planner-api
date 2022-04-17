@@ -7,15 +7,16 @@ const HomeComponent = () => {
     <div>
       <NavBarComponent />
       <div className="homeDiv">
+        <h1 data-testid="homeComponentHeader">
+          Welcome to the Recipe and Meal Planner API Project!
+        </h1>
+        <br />
         <Image
           data-testid="homeHeaderImage"
           className="homeHeaderImage"
           src="https://www.recipemash.com/wp-content/uploads/2015/02/lasagna-1024x683.jpg"
           fluid
         />
-        <h1 data-testid="homeComponentHeader">
-          Welcome to the Recipe and Meal Planner API Project!
-        </h1>
         <br />
         <h2>
           <a href="/mealplanner" data-testid="mealPlannerLink">

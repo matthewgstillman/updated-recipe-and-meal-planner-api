@@ -2,7 +2,7 @@ import "../App.css";
 import React, { useState } from "react";
 import MealList from "./MealList";
 import NavbarComponent from "./NavBarComponent";
-import { Container, Form } from "react-bootstrap";
+import { Container, Image, Form } from "react-bootstrap";
 
 const MealPlanner = () => {
   const [mealData, setMealData] = useState(null);
@@ -51,8 +51,18 @@ const MealPlanner = () => {
       <section className="mealPlan">
         <NavbarComponent />
         <h1 data-testid="mealPlanHeader" className="mealPlanHeader">
-          Meal Plan
+          Meal Planner
         </h1>
+        {mealPlanSubmitted === false ? (
+          <Image
+            data-testid="homeHeaderImage"
+            className="homeHeaderImage"
+            src="https://spoonacular.com/recipeImages/641911-556x370.jpg"
+            fluid
+          />
+        ) : (
+          <></>
+        )}
         <h3 data-testid="mealPlanParametersHeader">
           Create a Daily Meal Plan by Providing Your Calories and Diet Type
         </h3>
@@ -107,6 +117,7 @@ const MealPlanner = () => {
         <button data-testid="mealPlannerSubmitButton" onClick={getMealData}>
           Get Daily Meal Plan
         </button>
+        <br />
         <br />
         <br />
         <h1>

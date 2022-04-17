@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import NavBarComponent from "./NavBarComponent";
-import { Container, Form } from "react-bootstrap";
+import { Image, Form } from "react-bootstrap";
 
 const RandomRecipe = () => {
   const [randomRecipeDataMeta, setRandomRecipeDataMeta] = useState([{}]);
   const [cuisineType, setCuisineType] = useState("");
+  const [recipeSubmitted, setRecipeSubmitted] = useState(false);
   const URL = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=3&tags=${cuisineType}`;
 
   const handleCuisineChange = (event) => {
@@ -16,6 +17,7 @@ const RandomRecipe = () => {
       .then((response) => response.json())
       .then((data) => {
         setRandomRecipeDataMeta(data["recipes"]);
+        setRecipeSubmitted(true);
       })
       .catch(() => {
         console.log("error");
@@ -26,8 +28,19 @@ const RandomRecipe = () => {
     <div className="randomRecipeBox">
       <NavBarComponent />
       <h1 className="randomRecipeHeader" data-testid="randomRecipeHeader">
-        Random Recipe
+        Random Recipe Generator
       </h1>
+      <br />
+      {recipeSubmitted === false ? (
+        <Image
+          data-testid="homeHeaderImage"
+          className="homeHeaderImage"
+          src="https://spoonacular.com/recipeImages/660290-556x370.jpg"
+          fluid
+        />
+      ) : (
+        <></>
+      )}
       <h3 data-testid="randomRecipeCuisineTypeHeader">
         Select Cuisine Type (Optional)
       </h3>
@@ -60,8 +73,7 @@ const RandomRecipe = () => {
       <br />
       {randomRecipeDataMeta &&
         randomRecipeDataMeta.map((randomMeta) => (
-          <div>
-            <hr />
+          <div className="randomRecipeCard">
             <br />
             <a href={randomMeta.sourceUrl}>
               <h1 className="recipeTitleLink">{randomMeta.title}</h1>
