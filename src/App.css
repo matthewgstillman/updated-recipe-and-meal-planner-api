@@ -288,7 +288,7 @@ a {
 }
 
 .navBarLink{
-  color: white;
+  color: white !important;
 }
 
 .form-select{
