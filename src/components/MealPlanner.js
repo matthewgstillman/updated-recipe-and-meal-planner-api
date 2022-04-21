@@ -2,7 +2,7 @@ import "../App.css";
 import React, { useState } from "react";
 import MealList from "./MealList";
 import NavbarComponent from "./NavBarComponent";
-import { Container, Image, Form } from "react-bootstrap";
+import { Image, Form } from "react-bootstrap";
 
 const MealPlanner = () => {
   const [mealData, setMealData] = useState(null);

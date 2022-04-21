@@ -1,6 +1,7 @@
 import React from "react";
 import NavBarComponent from "./NavBarComponent";
 import { Image } from "react-bootstrap";
+import "../App.css";
 
 const HomeComponent = () => {
   return (
