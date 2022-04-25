@@ -1,6 +1,7 @@
 import React from "react";
 import Meal from "./Meal";
 import "../App.css";
+import "../Styles/index.css";
 
 const MealList = ({ mealData }) => {
   return (

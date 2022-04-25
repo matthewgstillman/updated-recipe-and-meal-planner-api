@@ -1,8 +1,9 @@
-import "../App.css";
 import React, { useState } from "react";
 import MealList from "./MealList";
 import NavbarComponent from "./NavBarComponent";
 import { Image, Form } from "react-bootstrap";
+import "../App.css";
+import "../Styles/index.css";
 
 const MealPlanner = () => {
   const [mealData, setMealData] = useState(null);

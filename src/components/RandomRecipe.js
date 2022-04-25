@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBarComponent from "./NavBarComponent";
 import { Image, Form } from "react-bootstrap";
 import "../App.css";
+import "../Styles/index.css";
 
 const RandomRecipe = () => {
   const [randomRecipeDataMeta, setRandomRecipeDataMeta] = useState([{}]);

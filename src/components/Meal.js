@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import "../Styles/index.css";
 
 const Meal = ({ meal }) => {
   const [imageUrl, setImageUrl] = useState("");

@@ -2,6 +2,7 @@ import React from "react";
 import NavBarComponent from "./NavBarComponent";
 import { Image } from "react-bootstrap";
 import "../App.css";
+import "../Styles/index.css";
 
 const HomeComponent = () => {
   return (
