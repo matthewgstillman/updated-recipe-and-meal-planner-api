@@ -177,8 +177,6 @@ a {
   width: 75%;
   box-shadow: 8px 8px 10px black;
   margin-bottom: 75px;
-  transform: scale(1);
-  transition: all 0.3s;
 }
 
 .recipeLink :hover {
