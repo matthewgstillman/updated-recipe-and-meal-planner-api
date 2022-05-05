@@ -51,7 +51,7 @@ const MealPlanner = () => {
     <div>
       <section className="mealPlan">
         <NavbarComponent />
-        <h1 data-testid="mealPlanHeader" className="mealPlanHeader">
+        <h1 data-testid="mealPlanHeader" className="mealPlan__header">
           Meal Planner
         </h1>
         {mealPlanSubmitted === false ? (
@@ -76,7 +76,7 @@ const MealPlanner = () => {
           data-testid="mealPlannerCaloriesSelect"
           type="text"
           onChange={handleCalorieChange}
-          className="formSelectInput"
+          className="mealPlan__formSelectInput"
         >
           <option value="1500">1500</option>
           <option value="1750">1750</option>
@@ -115,7 +115,7 @@ const MealPlanner = () => {
         </Form.Select>
         <br />
         <br />
-        <button data-testid="mealPlannerSubmitButton" onClick={getMealData}>
+        <button data-testid="mealPlannerSubmitButton" className="mealPlannerSumbmitButton" onClick={getMealData}>
           Get Daily Meal Plan
         </button>
         <br />

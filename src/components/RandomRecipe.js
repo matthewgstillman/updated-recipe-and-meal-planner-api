@@ -27,9 +27,9 @@ const RandomRecipe = () => {
   };
 
   return (
-    <div className="randomRecipeBox">
+    <div className="randomRecipe__Box">
       <NavBarComponent />
-      <h1 className="randomRecipeHeader" data-testid="randomRecipeHeader">
+      <h1 className="randomRecipe__Header" data-testid="randomRecipeHeader">
         Random Recipe Generator
       </h1>
       <br />
@@ -69,16 +69,16 @@ const RandomRecipe = () => {
         <option value="vietnamese">Vietnamese</option>
       </Form.Select>
       <br></br>
-      <button className="randomRecipeButton" onClick={getRandomRecipe}>
+      <button className="randomRecipe__Button" onClick={getRandomRecipe}>
         Get Random Recipes
       </button>
       <br />
       {randomRecipeDataMeta &&
         randomRecipeDataMeta.map((randomMeta) => (
-          <div className="randomRecipeCard">
+          <div className="randomRecipe__Card">
             <br />
             <a href={randomMeta.sourceUrl}>
-              <h1 className="recipeTitleLink">{randomMeta.title}</h1>
+              <h1 className="randomRecipe__TitleLink">{randomMeta.title}</h1>
             </a>
             <br />
             {randomMeta.readyInMinutes ? (
@@ -88,12 +88,12 @@ const RandomRecipe = () => {
             )}
             <br />
             {randomMeta.image ? (
-              <img className="randomMetaImage" src={randomMeta.image} alt="" />
+              <img className="randomRecipe__MetaImage" src={randomMeta.image} alt="" />
             ) : (
               <></>
             )}
             <div
-              className="summaryParagraph"
+              className="randomRecipe__SummaryParagraph"
               dangerouslySetInnerHTML={{ __html: randomMeta.summary }}
             />
             <br />
@@ -101,7 +101,7 @@ const RandomRecipe = () => {
               <div>
                 <h1>Instructions</h1>
                 <div
-                  className="instructionsParagraph"
+                  className="randomRecipe__InstructionsParagraph"
                   dangerouslySetInnerHTML={{
                     __html: randomMeta.instructions,
                   }}

@@ -21,8 +21,8 @@ const Meal = ({ meal }) => {
   return (
     <article className="mealArticle">
       <h1 data-testid="mealTitle">{meal.title}</h1>
-      <img data-testid="mealImage" src={imageUrl} alt="recipe" />
-      <ul className="instructions">
+      <img data-testid="mealImage" src={imageUrl} alt="recipe" className="mealArticle__img"/>
+      <ul className="mealArticle__instructions">
         <li data-testid="prepTime">
           Preparation Time: {meal.readyInMinutes} minutes
         </li>
@@ -31,7 +31,7 @@ const Meal = ({ meal }) => {
         </li>
       </ul>
       <button>
-        <a data-testid="sourceUrl" className="sourceUrl" href={meal.sourceUrl}>
+        <a data-testid="sourceUrl" className="mealArticle__link" href={meal.sourceUrl}>
           Go to Recipe
         </a>
       </button>

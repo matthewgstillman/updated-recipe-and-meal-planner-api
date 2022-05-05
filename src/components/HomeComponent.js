@@ -15,7 +15,7 @@ const HomeComponent = () => {
         <br />
         <Image
           data-testid="homeHeaderImage"
-          className="homeHeaderImage"
+          className="homeDiv__homeHeaderImage"
           src="https://www.recipemash.com/wp-content/uploads/2015/02/lasagna-1024x683.jpg"
           fluid
         />

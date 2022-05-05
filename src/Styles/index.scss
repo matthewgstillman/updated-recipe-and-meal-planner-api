@@ -13,10 +13,16 @@ section {
     padding-top: 85px;
     padding-bottom: 50px;
     margin-bottom: 50px;
-  }
-  
-  .mealPlanHeader {
-    padding-top: 20px;
+
+    &__header{
+      padding-top: 20px;
+    }
+
+    &__formSelectInput{
+      text-align: center;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
   }
   
   input {
@@ -25,18 +31,18 @@ section {
     margin-bottom: 1rem;
   }
   
-  button {
+  .mealPlannerSubmitButton {
     padding: 0.5rem 1rem;
     background-color: #3b5998;
     color: white;
     border: 1px solid black;
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
-  }
-  
-  button:hover {
-    cursor: pointer;
-    background-color: #8b9dc3;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #8b9dc3;
+    }
   }
   
   main {
@@ -50,12 +56,6 @@ section {
     margin-bottom: 2rem;
   }
   
-  .nutrients ul {
-    display: flex;
-    width: 35rem;
-    justify-content: space-evenly;
-  }
-  
   ul {
     list-style: none;
   }
@@ -67,11 +67,21 @@ section {
   .mealArticle {
     min-width: 60.4vw;
     width: 60.4vw;
-  }
-  
-  .mealArticle img {
-    width: 45%;
-    margin: 0 auto;
+
+    &__img {
+      width: 45%;
+      margin: 0 auto;
+    }
+
+    &__link{
+      text-decoration: none;
+      color: white;
+    }
+
+    &__instructions {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
   }
   
   img {
@@ -88,20 +98,10 @@ section {
     box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
   }
   
-  .instructions {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-  
   a {
     text-decoration: none;
     width: fit-content;
     align-content: center;
-  }
-  
-  .mealArticle a {
-    text-decoration: none;
-    color: white;
   }
   
   @media only screen and (max-width: 550px) {
@@ -116,20 +116,11 @@ section {
       align-items: center;
     }
   }
-  
-  .summaryParagraph {
-    text-align: center;
-    width: 50%;
-    margin: 0 auto;
-  }
-  
-  .randomRecipeButton {
-    margin-bottom: 25px;
-  }
-  
-  .randomMetaImage {
-    width: 50%;
-    margin: 0 auto;
+
+  .nutrients ul {
+    display: flex;
+    width: 35rem;
+    justify-content: space-evenly;
   }
   
   .instructionsParagraph {
@@ -145,37 +136,54 @@ section {
     font-weight: bold;
     color: black;
   }
-  
-  .randomRecipeBox {
-    width: 100%;
-    max-width: 25rem;
-    box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
-    margin: 0 auto;
-    min-height: 100vh;
-    min-width: 86.4vw;
-    padding-top: 85px;
-    background-color: white;
-    padding-bottom: 50px;
-    margin-bottom: 50px;
-  }
-  
-  .randomRecipeHeader {
-    padding-top: 20px;
-  }
-  
-  .randomRecipeCard {
-    width: 60.4vw;
-    margin: 0 auto;
+
+  .randomRecipe{
+    &__Box{
+      width: 100%;
+      max-width: 25rem;
+      box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
+      margin: 0 auto;
+      min-height: 100vh;
+      min-width: 86.4vw;
+      padding-top: 85px;
+      background-color: white;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
+
+    &__Header{
+      padding-top: 20px;
+    }
+
+    &__Button{
+      margin-bottom: 25px;
+    }
+
+    &__Card{
+      width: 60.4vw;
+      margin: 0 auto;
+      border-bottom: 1px solid lightgray;
+    }
+
+    &__TitleLink{
+      font-weight: bold;
+      color: black;
+    }
+
+    &__MetaImage{
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    &__SummaryParagraph {
+      text-align: center;
+      width: 50%;
+      margin: 0 auto;
+    }
   }
   
   .homeComponentHeader {
     margin-top: 85px;
-  }
-  
-  .homeHeaderImage {
-    width: 75%;
-    box-shadow: 8px 8px 10px black;
-    margin-bottom: 75px;
   }
   
   .recipeLink :hover {
@@ -184,36 +192,6 @@ section {
   
   .ingredientsHeading {
     margin-top: 20px;
-  }
-  
-  .navbar .navbar-nav .nav-link {
-    color: #000000;
-    font-size: 1.1em;
-  }
-
-  .navbar .navbar-nav .nav-link:hover {
-    color: #000000;
-  }
-
-  .navbar .navbar-nav .nav-item {
-    position: relative;
-  }
-  
-  .navbar .navbar-nav .nav-item::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: #000000;
-    width: 0%;
-    content: "";
-    height: 4px;
-    transition: all 0.5s;
-  }
-  
-  .navbar .navbar-nav .nav-item:hover::after {
-    width: 100%;
   }
   
   .homeDiv {
@@ -227,6 +205,12 @@ section {
     padding-top: 85px;
     padding-bottom: 50px;
     margin-bottom: 50px;
+
+    &__homeHeaderImage{
+      width: 75%;
+      box-shadow: 8px 8px 10px black;
+      margin-bottom: 75px;
+    }
   }
   
   .nav-link {
