@@ -229,6 +229,13 @@ section {
   .ingredientsHeading {
     margin-top: 20px;
   }
+
+  .homeHeaderImage .img-fluid{
+    width: 25%;
+    height: auto;
+    box-shadow: 8px 8px 10px black;
+    margin-bottom: 75px;
+  }
   
   .homeDiv {
     width: 100%;
@@ -243,7 +250,8 @@ section {
     margin-bottom: 50px;
 
     &__homeHeaderImage{
-      width: 75%;
+      width: 70%;
+      height: auto;
       box-shadow: 8px 8px 10px black;
       margin-bottom: 75px;
     }

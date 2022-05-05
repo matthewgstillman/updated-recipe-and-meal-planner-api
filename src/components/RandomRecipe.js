@@ -20,6 +20,7 @@ const RandomRecipe = () => {
       .then((data) => {
         setRandomRecipeDataMeta(data["recipes"]);
         setRecipeSubmitted(true);
+        window.scrollTo(0,30);
       })
       .catch(() => {
         console.log("error");
@@ -34,16 +35,46 @@ const RandomRecipe = () => {
       </h1>
       <br />
       {recipeSubmitted === false ? (
-        <Image
+        <div>
+          <Image
           data-testid="homeHeaderImage"
           className="homeHeaderImage"
           src="https://spoonacular.com/recipeImages/660290-556x370.jpg"
           fluid
         />
+        <h3 data-testid="randomRecipeCuisineTypeHeader">
+        Select Cuisine Type (Optional)
+      </h3>
+      <Form.Select
+        aria-label="Select Cuisine"
+        data-testid="randomRecipeSelectForm"
+        type="text"
+        onChange={handleCuisineChange}
+      >
+        <option value="" disabled selected>
+          Select cuisine type
+        </option>
+        <option value="">None</option>
+        <option value="german">German</option>
+        <option value="indian">Indian</option>
+        <option value="irish">Irish</option>
+        <option value="italian">Italian</option>
+        <option value="korean">Korean</option>
+        <option value="mediterranean">Mediterranean</option>
+        <option value="southern">Southern</option>
+        <option value="spanish">Spanish</option>
+        <option value="thai">Thai</option>
+        <option value="vietnamese">Vietnamese</option>
+      </Form.Select>
+      <br></br>
+      <button className="randomRecipe__Button" onClick={getRandomRecipe}>
+        Get Random Recipes
+      </button>
+      <br />
+        </div>
       ) : (
-        <></>
-      )}
-      <h3 data-testid="randomRecipeCuisineTypeHeader">
+        <div>
+          <h3 data-testid="randomRecipeCuisineTypeHeader">
         Select Cuisine Type (Optional)
       </h3>
       <Form.Select
@@ -128,6 +159,8 @@ const RandomRecipe = () => {
         ))}
       <br />
       <br />
+        </div>
+      )}
     </div>
   );
 };

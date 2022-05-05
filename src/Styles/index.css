@@ -211,6 +211,13 @@ a {
   margin-top: 20px;
 }
 
+.homeHeaderImage .img-fluid {
+  width: 25%;
+  height: auto;
+  box-shadow: 8px 8px 10px black;
+  margin-bottom: 75px;
+}
+
 .homeDiv {
   width: 100%;
   max-width: 25rem;
@@ -224,7 +231,8 @@ a {
   margin-bottom: 50px;
 }
 .homeDiv__homeHeaderImage {
-  width: 75%;
+  width: 70%;
+  height: auto;
   box-shadow: 8px 8px 10px black;
   margin-bottom: 75px;
 }
