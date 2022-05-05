@@ -17,10 +17,10 @@ const NavBarComponent = () => {
             data-testid="responsiveNavBar"
           >
             <Nav className="me-auto">
-              <Nav.Link href="/mealplanner" data-testid="navBarMealPlannerLink" className="navBarLink nav-link-ltr">
+              <Nav.Link href="/mealplanner" data-testid="navBarMealPlannerLink" className="navBarLink">
                 Meal Planner
               </Nav.Link>
-              <Nav.Link href="/random" data-testid="navBarRandomLink" className="navBarLink nav-link-ltr">
+              <Nav.Link href="/random" data-testid="navBarRandomLink" className="navBarLink">
                 Random Recipe
               </Nav.Link>
             </Nav>
