@@ -60,7 +60,6 @@ const RandomRecipe = () => {
         <option value="indian">Indian</option>
         <option value="irish">Irish</option>
         <option value="italian">Italian</option>
-        <option value="jewish">Jewish</option>
         <option value="korean">Korean</option>
         <option value="mediterranean">Mediterranean</option>
         <option value="southern">Southern</option>
@@ -88,7 +87,13 @@ const RandomRecipe = () => {
             )}
             <br />
             {randomMeta.image ? (
-              <img className="randomRecipe__MetaImage" src={randomMeta.image} alt="" />
+              <div className="randomRecipe__MetaImageBox">
+                <img
+                className="randomRecipe__MetaImage"
+                src={randomMeta.image}
+                alt=""
+              />
+              </div>
             ) : (
               <></>
             )}
@@ -111,11 +116,13 @@ const RandomRecipe = () => {
               <></>
             )}
             <br />
+            <div className="randomRecipe__IngredientsParagraph">
             {randomMeta.extendedIngredients ? <h1>Ingredients</h1> : <></>}
             {randomMeta.extendedIngredients &&
               randomMeta.extendedIngredients.map((ingredient) => {
                 return <h6>{ingredient.original}</h6>;
               })}
+            </div>
             <br></br>
           </div>
         ))}

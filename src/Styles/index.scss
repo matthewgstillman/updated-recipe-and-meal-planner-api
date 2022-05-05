@@ -163,24 +163,60 @@ section {
       width: 60.4vw;
       margin: 0 auto;
       border-bottom: 1px solid lightgray;
+      box-shadow: 1px 1px 20px -5px rgba(19, 2, 2, 0.5); 
+      padding-bottom: 10px;
     }
 
     &__TitleLink{
       font-weight: bold;
-      color: black;
     }
 
-    &__MetaImage{
-      width: 50%;
+    &__MetaImageBox{
+      width: 60%;
+      height: auto;
+      overflow: hidden;
       margin: 0 auto;
+
+      & img{
+        width: 100%;
+        transition: 0.5s all ease-in-out;
+        border-radius: 2%; 
+      }
+
+      &:hover img{
+        transform: scale(1.5);
+      }
     }
 
     &__SummaryParagraph {
       text-align: center;
-      width: 50%;
+      width: 80%;
       margin: 0 auto;
-    }
+      padding-top: 10px;
   }
+
+    &__InstructionsParagraph {
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      list-style: inside;
+
+      & ol{
+        padding-left: 0rem;
+      }
+    }
+
+    &__IngredientsParagraph {
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      list-style: none;
+      
+      & ol{
+        padding-left: 0rem;
+      }
+  }
+}
   
   .homeComponentHeader {
     margin-top: 85px;
@@ -219,6 +255,11 @@ section {
   
   .navBarLink{
     color: white !important;
+
+    &:hover{
+      border-bottom: 2px solid white;
+      transition: 3000ms;
+    }
   }
   
   .form-select{

@@ -154,19 +154,49 @@ a {
   width: 60.4vw;
   margin: 0 auto;
   border-bottom: 1px solid lightgray;
+  box-shadow: 1px 1px 20px -5px rgba(19, 2, 2, 0.5);
+  padding-bottom: 10px;
 }
 .randomRecipe__TitleLink {
   font-weight: bold;
-  color: black;
 }
-.randomRecipe__MetaImage {
-  width: 50%;
+.randomRecipe__MetaImageBox {
+  width: 60%;
+  height: auto;
+  overflow: hidden;
   margin: 0 auto;
+}
+.randomRecipe__MetaImageBox img {
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+  border-radius: 2%;
+}
+.randomRecipe__MetaImageBox:hover img {
+  transform: scale(1.5);
 }
 .randomRecipe__SummaryParagraph {
   text-align: center;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
+  padding-top: 10px;
+}
+.randomRecipe__InstructionsParagraph {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  list-style: inside;
+}
+.randomRecipe__InstructionsParagraph ol {
+  padding-left: 0rem;
+}
+.randomRecipe__IngredientsParagraph {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  list-style: none;
+}
+.randomRecipe__IngredientsParagraph ol {
+  padding-left: 0rem;
 }
 
 .homeComponentHeader {
@@ -205,6 +235,10 @@ a {
 
 .navBarLink {
   color: white !important;
+}
+.navBarLink:hover {
+  border-bottom: 2px solid white;
+  transition: 3000ms;
 }
 
 .form-select {

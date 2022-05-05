@@ -9,7 +9,7 @@ const NavBarComponent = () => {
       <Navbar data-testid="navBarMain" bg="dark" fixed="top" variant="dark">
         <Container data-testid="navBarContainer">
           <Navbar.Brand href="/" data-testid="navBarHomeLink">
-            Food Project
+            FOOD PROJECT
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse
@@ -17,10 +17,10 @@ const NavBarComponent = () => {
             data-testid="responsiveNavBar"
           >
             <Nav className="me-auto">
-              <Nav.Link href="/mealplanner" data-testid="navBarMealPlannerLink" className="navBarLink">
+              <Nav.Link href="/mealplanner" data-testid="navBarMealPlannerLink" className="navBarLink nav-link-ltr">
                 Meal Planner
               </Nav.Link>
-              <Nav.Link href="/random" data-testid="navBarRandomLink" className="navBarLink">
+              <Nav.Link href="/random" data-testid="navBarRandomLink" className="navBarLink nav-link-ltr">
                 Random Recipe
               </Nav.Link>
             </Nav>
