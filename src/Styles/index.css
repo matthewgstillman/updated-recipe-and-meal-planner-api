@@ -104,12 +104,36 @@ a {
   .meals {
     flex-direction: column;
     align-items: center;
+    min-width: 86vw;
   }
 
   .nutrients ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .mealArticle {
+    min-width: 60.4vw;
+    width: 60.4vw;
+    margin: 0 auto;
+  }
+
+  .randomRecipe__Card {
+    min-width: 86vw;
+    margin: 0 auto;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 1px 1px 20px -5px rgba(19, 2, 2, 0.5);
+    padding-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .randomRecipe__Card {
+    min-width: 86vw;
+    margin: 0 auto;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 1px 1px 20px -5px rgba(19, 2, 2, 0.5);
+    padding-bottom: 10px;
   }
 }
 .nutrients ul {
