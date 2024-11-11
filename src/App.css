@@ -122,13 +122,17 @@ ul {
 }
 
 .mealArticle {
-  min-width: 60.4vw;
-  width: 60.4vw;
+  min-width: 71.4vw;
+  width: 71.4vw;
 }
 
 .mealArticle img {
   width: 45%;
   margin: 0 auto;
+}
+
+.mealArticle button {
+  max-width: 20%;
 }
 
 img {

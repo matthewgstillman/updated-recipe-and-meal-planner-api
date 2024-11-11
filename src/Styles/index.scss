@@ -264,7 +264,7 @@ section {
   }
   
   .homeDiv {
-    width: 100%;
+    width: 90%;
     max-width: 25rem;
     box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
     margin: 0 auto;
@@ -311,4 +311,28 @@ section {
     margin: 0 auto;
     margin-top: 20px;
     box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
+  }
+
+  @media only screen and (max-width: 440px) {
+    .homeDiv {
+      width: 90%; 
+      max-width: 20rem; 
+      padding-top: 60px; 
+      padding-bottom: 30px; 
+      margin-bottom: 30px; 
+    }
+  
+    .homeDiv__homeHeaderImage {
+      width: 80%; 
+      height: auto; 
+      box-shadow: 5px 5px 8px black; 
+      margin-bottom: 50px; 
+    }
+
+    .homeHeaderImage .img-fluid {
+      width: 100%;
+      height: auto;
+      box-shadow: 5px 5px 8px black;
+      margin-bottom: 50px;
+    }
   }
