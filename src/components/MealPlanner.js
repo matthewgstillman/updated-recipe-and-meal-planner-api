@@ -64,7 +64,10 @@ const MealPlanner = () => {
         ) : (
           <></>
         )}
-        <h3 data-testid="mealPlanParametersHeader">
+        <h3
+          data-testid="mealPlanParametersHeader"
+          className="mealPlan__paramatersHeader"
+        >
           Create a Daily Meal Plan by Providing Your Calories and Diet Type
         </h3>
         <br />
@@ -115,7 +118,11 @@ const MealPlanner = () => {
         </Form.Select>
         <br />
         <br />
-        <button data-testid="mealPlannerSubmitButton" className="mealPlannerSumbmitButton" onClick={getMealData}>
+        <button
+          data-testid="mealPlannerSubmitButton"
+          className="mealPlannerSumbmitButton"
+          onClick={getMealData}
+        >
           Get Daily Meal Plan
         </button>
         <br />

@@ -16,12 +16,26 @@ section {
 
     &__header{
       padding-top: 20px;
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    &__paramatersHeader {
+      font-size: clamp(1rem, 3.5vw, 1.5rem);
+      line-height: 1.3;
+      margin-bottom: 1rem;
     }
 
     &__formSelectInput{
       text-align: center;
       padding: 0.5rem;
       margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      line-height: 1.3;
     }
   }
   
@@ -334,5 +348,15 @@ section {
       height: auto;
       box-shadow: 5px 5px 8px black;
       margin-bottom: 50px;
+    }
+
+    .mealPlan {
+      width: 90%;
+    }
+
+    .randomRecipe__Box {
+      width: 90%;
+      max-width: 90%;
+      margin: 0 auto;
     }
   }
