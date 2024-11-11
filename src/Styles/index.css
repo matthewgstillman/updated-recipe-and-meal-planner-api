@@ -76,9 +76,10 @@ section {
   margin-bottom: 1.5rem;
 }
 .mealPlan__paramatersHeader {
-  font-size: clamp(1rem, 3.5vw, 1.5rem);
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
   line-height: 1.3;
   margin-bottom: 1rem;
+  max-width: 90%;
 }
 .mealPlan__formSelectInput {
   text-align: center;
@@ -341,6 +342,11 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+@media only screen and (max-width: 965px) {
+  .randomRecipe__Card {
+    width: 77.4vw;
   }
 }
 @media only screen and (max-width: 440px) {

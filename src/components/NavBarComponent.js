@@ -1,6 +1,5 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import "../App.css";
 import "../Styles/index.css";
 
 const NavBarComponent = () => {
@@ -17,10 +16,18 @@ const NavBarComponent = () => {
             data-testid="responsiveNavBar"
           >
             <Nav className="me-auto">
-              <Nav.Link href="/mealplanner" data-testid="navBarMealPlannerLink" className="navBarLink">
+              <Nav.Link
+                href="/mealplanner"
+                data-testid="navBarMealPlannerLink"
+                className="navBarLink"
+              >
                 Meal Planner
               </Nav.Link>
-              <Nav.Link href="/random" data-testid="navBarRandomLink" className="navBarLink">
+              <Nav.Link
+                href="/random"
+                data-testid="navBarRandomLink"
+                className="navBarLink"
+              >
                 Random Recipe
               </Nav.Link>
             </Nav>
