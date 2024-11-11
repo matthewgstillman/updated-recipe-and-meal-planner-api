@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensure consistent box-sizing */
+  box-sizing: border-box;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  animation: App-logo-spin infinite 20s linear; /* Keeps this in one place */
+  animation: App-logo-spin infinite 20s linear;
 }
 
 @keyframes App-logo-spin {
@@ -120,7 +120,13 @@ main {
 h1 {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: clamp(1.5rem, 5vw, 3rem); /* Consistent responsive scaling */
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 4vw, 2.5rem);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
 }
 
 ul {
@@ -243,7 +249,8 @@ article {
 }
 
 .homeComponentHeader {
-  margin-top: 85px;
+  margin-top: 40px;
+  font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 .homeHeaderImage {
@@ -300,6 +307,24 @@ article {
   color: white !important;
 }
 
+.homeDiv {
+  width: 100%;
+  max-width: 25rem;
+  box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
+  margin: 0 auto;
+  min-height: 100vh;
+  min-width: 86.4vw;
+  background-color: white;
+  padding-top: 85px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+.homeDiv .mealPlannerLink, .homeDiv .randomRecipeLink {
+  font-size: clamp(1.25rem, 4vw, 2.5rem);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
 .form-select {
   width: 70% !important;
   margin: 0 auto;
@@ -307,7 +332,6 @@ article {
   box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
 }
 
-/* Responsive Styles */
 @media only screen and (max-width: 550px) {
   .meals {
     flex-direction: column;
@@ -340,5 +364,8 @@ article {
     height: auto;
     box-shadow: 5px 5px 8px black;
     margin-bottom: 50px;
+  }
+  .homeComponentHeader {
+    margin-top: 85px;
   }
 }/*# sourceMappingURL=index.css.map */

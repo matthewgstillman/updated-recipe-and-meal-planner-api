@@ -1,7 +1,6 @@
 import React from "react";
 import NavBarComponent from "./NavBarComponent";
 import { Image } from "react-bootstrap";
-import "../App.css";
 import "../Styles/index.css";
 
 const HomeComponent = () => {
@@ -9,7 +8,7 @@ const HomeComponent = () => {
     <div>
       <NavBarComponent />
       <div className="homeDiv">
-        <h1 data-testid="homeComponentHeader">
+        <h1 data-testid="homeComponentHeader" className="homeComponentHeader">
           Welcome to the Recipe and Meal Planner API Project!
         </h1>
         <br />
@@ -20,13 +19,13 @@ const HomeComponent = () => {
           fluid
         />
         <br />
-        <h2>
+        <h2 className="mealPlannerLink">
           <a href="/mealplanner" data-testid="mealPlannerLink">
             Click here for the Meal Planner based on your diet
           </a>
         </h2>
         <br />
-        <h2>
+        <h2 className="randomRecipeLink">
           <a href="/random" data-testid="randomRecipeLink">
             Click here for random recipes
           </a>
