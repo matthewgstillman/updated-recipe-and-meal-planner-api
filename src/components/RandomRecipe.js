@@ -40,6 +40,7 @@ const RandomRecipe = () => {
             className="homeHeaderImage"
             src="https://spoonacular.com/recipeImages/660290-556x370.jpg"
             fluid
+            loading="lazy"
           />
           <h3 data-testid="randomRecipeCuisineTypeHeader">
             Select Cuisine Type (Optional)

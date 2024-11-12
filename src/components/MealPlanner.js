@@ -59,6 +59,7 @@ const MealPlanner = () => {
             className="homeHeaderImage"
             src="https://spoonacular.com/recipeImages/641911-556x370.jpg"
             fluid
+            loading="lazy"
           />
         ) : (
           <></>
