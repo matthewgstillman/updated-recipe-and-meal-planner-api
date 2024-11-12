@@ -1,3 +1,32 @@
+// Variables
+$font-primary: "Roboto", sans-serif;
+$color-primary: #3b5998;
+$color-secondary: #8b9dc3;
+$color-background: #e9bcb7;
+$color-gradient-dark: #29524a;
+$color-header: #282c34;
+$color-link: #61dafb;
+$color-text: #000000;
+$color-highlight: aquamarine;
+$color-border: rgba(77, 77, 77, 0.15);
+
+// Mixins
+@mixin flex-center($direction: column, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin box-shadow($color: $color-border, $x: 0, $y: 4px, $blur: 8px, $spread: 2px) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin responsive-font($min-size, $max-size) {
+  font-size: clamp($min-size, 4vw, $max-size);
+}
+
+// Global Styles
 * {
   margin: 0;
   padding: 0;
@@ -5,46 +34,41 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: $font-primary;
   background-attachment: white;
 }
 
 .App {
   text-align: center;
-  background-image: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+  background-image: linear-gradient(315deg, $color-background 0%, $color-gradient-dark 74%);
+  @include flex-center;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  animation: App-logo-spin infinite 20s linear;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  &-logo {
+    height: 40vmin;
+    pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
   }
-  to {
-    transform: rotate(360deg);
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  &-header {
+    background-color: $color-header;
+    min-height: 100vh;
+    @include flex-center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
 
-.App-link {
-  color: #61dafb;
+  &-link {
+    color: $color-link;
+  }
 }
 
 .sourceUrl {
@@ -58,27 +82,24 @@ section {
 .mealPlan {
   width: 100%;
   max-width: 25rem;
-  box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
+  @include box-shadow();
   margin: 0 auto;
   min-height: 100vh;
   min-width: 86.4vw;
   background-color: white;
-  padding-top: 85px;
-  padding-bottom: 50px;
+  padding: 85px 0 50px;
   margin-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-center;
 
   &__header {
     padding-top: 20px;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    @include responsive-font(1.5rem, 3rem);
     line-height: 1.2;
     margin-bottom: 1.5rem;
   }
 
   &__paramatersHeader {
-    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    @include responsive-font(1rem, 1.2rem);
     line-height: 1.3;
     margin-bottom: 1rem;
     max-width: 90%;
@@ -91,7 +112,7 @@ section {
   }
 
   h4 {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    @include responsive-font(1rem, 1.5rem);
     line-height: 1.3;
   }
 }
@@ -104,34 +125,32 @@ input {
 
 button {
   padding: 0.5rem 1rem;
-  background-color: #3b5998;
+  background-color: $color-primary;
   color: white;
   border: 1px solid black;
-  font-family: "Roboto", sans-serif;
+  font-family: $font-primary;
   font-size: 1rem;
   margin-top: 1rem;
   align-self: center;
 
   &:hover {
     cursor: pointer;
-    background-color: #8b9dc3;
+    background-color: $color-secondary;
   }
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-center();
 }
 
 h1 {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  @include responsive-font(1.5rem, 3rem);
 }
 
 h2 {
-  font-size: clamp(1.25rem, 4vw, 2.5rem);
+  @include responsive-font(1.25rem, 2.5rem);
   line-height: 1.3;
   margin-bottom: 1.5rem;
 }
@@ -148,34 +167,34 @@ ul {
 
 .meal {
   display: flex;
-}
 
-.mealArticle {
-  min-width: 60.4vw;
-  width: 60.4vw;
+  &Article {
+    min-width: 60.4vw;
+    width: 60.4vw;
 
-  img {
-    width: 45%;
-    margin: 0 auto;
-  }
+    img {
+      width: 45%;
+      margin: 0 auto;
+    }
 
-  button {
-    max-width: 20%;
-  }
+    button {
+      max-width: 20%;
+    }
 
-  a {
-    text-decoration: none;
-    color: white;
-  }
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
-  &__link {
-    text-decoration: none;
-    color: white;
-  }
+    &__link {
+      text-decoration: none;
+      color: white;
+    }
 
-  &__instructions {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    &__instructions {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -185,12 +204,11 @@ img {
 }
 
 article {
-  display: flex;
-  flex-direction: column;
+  @include flex-center(column);
   padding: 2rem;
   margin: 0 1rem;
   max-width: 25rem;
-  box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
+  @include box-shadow();
 }
 
 .instructionsParagraph {
@@ -198,12 +216,12 @@ article {
   margin: 0 auto;
 }
 
-.recipeTitle {
+.recipeTitle,
+.recipTitleLink {
   font-weight: bold;
 }
 
 .recipTitleLink {
-  font-weight: bold;
   color: black;
 }
 
@@ -211,7 +229,7 @@ article {
   &__Box {
     width: 100%;
     max-width: 25rem;
-    box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
+    @include box-shadow();
     margin: 0 auto;
     min-height: 100vh;
     min-width: 86.4vw;
@@ -233,7 +251,7 @@ article {
     width: 60.4vw;
     margin: 0 auto;
     border-bottom: 1px solid lightgray;
-    box-shadow: 1px 1px 20px -5px rgba(19, 2, 2, 0.5);
+    @include box-shadow($color: rgba(19, 2, 2, 0.5), $x: 1px, $y: 1px, $blur: 20px, $spread: -5px);
     padding-bottom: 10px;
   }
 
@@ -275,24 +293,24 @@ article {
 
 .homeComponentHeader {
   margin-top: 40px;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  @include responsive-font(1.5rem, 3rem);
 }
 
 .homeHeaderImage {
   width: 75%;
-  box-shadow: 8px 8px 10px black;
+  @include box-shadow($color: black, $x: 8px, $y: 8px, $blur: 10px);
   margin-bottom: 75px;
 
   .img-fluid {
     width: 100%;
     height: auto;
-    box-shadow: 5px 5px 8px black;
+    @include box-shadow($color: black, $x: 5px, $y: 5px, $blur: 8px);
     margin-bottom: 50px;
   }
 }
 
 .recipeLink:hover {
-  color: aquamarine;
+  color: $color-highlight;
 }
 
 .ingredientsHeading {
@@ -302,11 +320,11 @@ article {
 .navbar {
   .navbar-nav {
     .nav-link {
-      color: #000000;
+      color: $color-text;
       font-size: 1.1em;
 
       &:hover {
-        color: #000000;
+        color: $color-text;
       }
     }
 
@@ -319,7 +337,7 @@ article {
         left: 0;
         right: 0;
         margin: auto;
-        background-color: #000000;
+        background-color: $color-text;
         width: 0;
         content: "";
         height: 4px;
@@ -344,7 +362,7 @@ article {
 .homeDiv {
   width: 100%;
   max-width: 25rem;
-  box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
+  @include box-shadow();
   margin: 0 auto;
   min-height: 100vh;
   min-width: 86.4vw;
@@ -353,8 +371,9 @@ article {
   padding-bottom: 50px;
   margin-bottom: 50px;
 
-  .mealPlannerLink, .randomRecipeLink {
-    font-size: clamp(1.25rem, 4vw, 2.5rem);
+  .mealPlannerLink,
+  .randomRecipeLink {
+    @include responsive-font(1.25rem, 2.5rem);
     line-height: 1.3;
     margin-bottom: 1.5rem;
   }
@@ -362,21 +381,17 @@ article {
 
 .form-select {
   width: 70% !important;
-  margin: 0 auto;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
+  margin: 20px auto;
+  @include box-shadow();
 }
 
 @media only screen and (max-width: 550px) {
   .meals {
-    flex-direction: column;
-    align-items: center;
+    @include flex-center(column);
   }
 
   .nutrients ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-center(column);
   }
 }
 
@@ -387,14 +402,9 @@ article {
 }
 
 @media only screen and (max-width: 440px) {
-  .mealPlan {
-    max-width: 90%;
-  }
-
+  .mealPlan,
   .randomRecipe__Box {
-    width: 90%;
     max-width: 90%;
-    margin: 0 auto;
   }
 
   .homeDiv {
@@ -408,7 +418,7 @@ article {
   .homeHeaderImage .img-fluid {
     width: 100%;
     height: auto;
-    box-shadow: 5px 5px 8px black;
+    @include box-shadow($color: black, $x: 5px, $y: 5px, $blur: 8px);
     margin-bottom: 50px;
   }
 
