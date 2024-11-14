@@ -104,8 +104,8 @@ const RandomRecipe = () => {
           </button>
           <br />
           {randomRecipeDataMeta &&
-            randomRecipeDataMeta.map((randomMeta) => (
-              <div className="randomRecipe__Card">
+            randomRecipeDataMeta.map((randomMeta, index) => (
+              <div key={index} className="randomRecipe__Card">
                 <br />
                 <a href={randomMeta.sourceUrl}>
                   <h1 className="randomRecipe__TitleLink">
@@ -156,8 +156,8 @@ const RandomRecipe = () => {
                     <></>
                   )}
                   {randomMeta.extendedIngredients &&
-                    randomMeta.extendedIngredients.map((ingredient) => {
-                      return <h6>{ingredient.original}</h6>;
+                    randomMeta.extendedIngredients.map((ingredient, i) => {
+                      return <h6 key={i}>{ingredient.original}</h6>;
                     })}
                 </div>
                 <br></br>
