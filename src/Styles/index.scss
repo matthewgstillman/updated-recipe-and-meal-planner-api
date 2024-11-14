@@ -371,6 +371,10 @@ article {
   padding-bottom: 50px;
   margin-bottom: 50px;
 
+  .mealPlannerLink{
+    margin-top: 20px;
+  }
+
   .mealPlannerLink,
   .randomRecipeLink {
     @include responsive-font(1.25rem, 2.5rem);

@@ -7,7 +7,7 @@ const HomeComponent = () => {
   return (
     <div>
       <NavBarComponent />
-      <div className="homeDiv">
+      <section className="homeDiv">
         <h1 data-testid="homeComponentHeader" className="homeComponentHeader">
           Welcome to the Recipe and Meal Planner API Project!
         </h1>
@@ -31,7 +31,7 @@ const HomeComponent = () => {
             Click here for random recipes
           </a>
         </h2>
-      </div>
+      </section>
     </div>
   );
 };
